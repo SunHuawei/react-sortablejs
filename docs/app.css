@@ -54,3 +54,6 @@ ul {
 .block-list > *:hover {
     cursor: move;
 }
+.sortable-selected {
+    background-color: #ff7373;
+}

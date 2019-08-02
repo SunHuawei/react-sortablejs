@@ -39,7 +39,7 @@
   "peerDependencies": {
     "react": ">=15.0.0",
     "react-dom": ">=15.0.0",
-    "sortablejs": "^1.6.1"
+    "sortablejs": "^1.10.0-rc3"
   },
   "dependencies": {
     "prop-types": ">=15.0.0"
@@ -68,7 +68,7 @@
     "nib": "~1.1.2",
     "react": ">=15.0.0",
     "react-dom": ">=15.0.0",
-    "sortablejs": "~1.6.1",
+    "sortablejs": "1.10.0-rc3",
     "stylus-loader": "~3.0.1",
     "tap": "~12.1.1",
     "terser-webpack-plugin": "~1.2.1",

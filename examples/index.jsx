@@ -12,7 +12,8 @@ class App extends React.Component {
         groupRight: ['Lemon', 'Orange', 'Pear', 'Peach'],
         cloneUncontrolled: ['Apple', 'Banana', 'Cherry', 'Guava', 'Grape', 'Kiwi', 'Lemon', 'Melon', 'Orange', 'Pear', 'Peach', 'Strawberry'],
         cloneControlledSource: ['Apple', 'Banana', 'Cherry', 'Guava', 'Grape', 'Kiwi', 'Lemon', 'Melon', 'Orange', 'Pear', 'Peach', 'Strawberry'],
-        cloneControlledTarget: []
+        cloneControlledTarget: [],
+        multiDragList: [1, 2, 3, 4, 5, 6]
     };
 
     simpleList = null;
@@ -56,6 +57,9 @@ class App extends React.Component {
         ));
         const cloneControlledTarget = this.state.cloneControlledTarget.map((val, key) => (
             <li key={uniqueId()} data-id={val}>{val}</li>
+        ));
+        const multiDragList = this.state.multiDragList.map((val, key) => (
+            <li key={uniqueId()} data-id={val}>List Item {val}</li>
         ));
 
         return (
@@ -222,6 +226,29 @@ class App extends React.Component {
                                 tag="ul"
                             >
                                 {cloneControlledTarget}
+                            </Sortable>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div className="title" style={{ marginTop: 50 }}>MultiDrag</div>
+                    <h4>Click to select multiple items.</h4>
+                    <div className="row">
+                        <div className="col-sm-12">
+                            <Sortable
+                                options={{
+                                    multiDrag: true,
+                                    animation: 150
+                                }}
+                                className="block-list"
+                                ref={c => {
+                                    if (c) {
+                                        this.multiDragList = c.sortable;
+                                    }
+                                }}
+                                tag="ul"
+                            >
+                                {multiDragList}
                             </Sortable>
                         </div>
                     </div>

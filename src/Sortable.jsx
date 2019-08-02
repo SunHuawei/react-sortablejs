@@ -1,7 +1,9 @@
 /* eslint consistent-return: 0 */
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import SortableJS from 'sortablejs';
+import { Sortable as SortableJS, MultiDrag } from 'sortablejs';
+
+SortableJS.mount(new MultiDrag());
 
 const store = {
     nextSibling: null,
